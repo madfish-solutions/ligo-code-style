@@ -1,3 +1,25 @@
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Code organization](#code-organization)
+  - [Subfolders](#subfolders)
+    - [Contracts](#contracts)
+    - [Builds](#builds)
+    - [Migrations](#migrations)
+    - [Scripts](#scripts)
+    - [Tests](#tests)
+  - [File's naming](#files-naming)
+- [Scripts](#scripts)
+- [Formatting](#formatting)
+- [Names](#mames)
+- [Comments](#comments)
+- [Types](#types)
+- [Control flow structures](#control-flow-structures)
+- [Functions](#functions)
+- [Exceptions](#exceptions)
+- [Values of complex types](#values-of-complex-types)
+- [Constants](#constants)
+
 # Introduction
 
 Formatting and structuring issues are the main sticking point in the way of creating human-readable and maintainable solutions. Despite the Ligo code-base is quickly growing there is no common code style which makes it harder to involve new people in project development, review, or audit processes.
@@ -8,11 +30,11 @@ This document provides tips for writing clean Ligo code. In spite of most of the
 
 To make the navigation easier, the followed project structure is suggested:
 
-- [contracts](##contracts): smart contracts, it can be both Ligo and Michelson code.
-- [builds](##builds): compiled contracts, storage, expressions etc.
-- [migrations](##migrations): scripts to deploy the contracts to the network.
-- [scripts](##scripts): helpful scripts.
-- [test](##test): code for testing smart contracts and ensuring their validity.
+- [contracts](#contracts): smart contracts, it can be both Ligo and Michelson code.
+- [builds](#builds): compiled contracts, storage, expressions etc.
+- [migrations](#migrations): scripts to deploy the contracts to the network.
+- [scripts](#scripts): helpful scripts.
+- [test](#test): code for testing smart contracts and ensuring their validity.
 
 ## Subfolders
 
