@@ -2,17 +2,17 @@
 
 Formatting and structuring issues are the main sticking point in the way of creating human-readable and maintainable solutions. Despite the Ligo code-base is quickly growing there is no common code style which makes it harder to involve new people in project development, review, or audit processes.
 
-This document provides tips for writing clean Ligo code. In spite of most of the subjects are covered, the specification isn't final and can be improved anytime. Anyone can add the rule with the **(suggestion)** mark at \*\*\*\*the beginning. The mark can be removed after discussion and approval of the majority.
+This document provides tips for writing clean Ligo code. In spite of most of the subjects are covered, the specification isn't final and can be improved anytime. Anyone can add the rule with the **(suggestion)** mark at the beginning. The mark can be removed after discussion and approval of the majority.
 
 # Code organization
 
 To make the navigation easier, the followed project structure is suggested:
 
-- [contracts](https://www.notion.so/Ligo-Style-Guide-a23198320c764228b64ee12b0a47026b)**:** smart contracts, it can be both Ligo and Michelson code.
-- [builds](https://www.notion.so/Ligo-Style-Guide-a23198320c764228b64ee12b0a47026b): compiled contracts, storage, expressions etc.
-- [migrations](https://www.notion.so/Ligo-Style-Guide-a23198320c764228b64ee12b0a47026b): scripts to deploy the contracts to the network.
-- [scripts](https://www.notion.so/Ligo-Style-Guide-a23198320c764228b64ee12b0a47026b)**:** helpful scripts.
-- [test](https://www.notion.so/Ligo-Style-Guide-a23198320c764228b64ee12b0a47026b): code for testing smart contracts and ensuring their validity.
+- [contracts](##contracts): smart contracts, it can be both Ligo and Michelson code.
+- [builds](##builds): compiled contracts, storage, expressions etc.
+- [migrations](##migrations): scripts to deploy the contracts to the network.
+- [scripts](##scripts): helpful scripts.
+- [test](##test): code for testing smart contracts and ensuring their validity.
 
 ## Subfolders
 
@@ -127,7 +127,7 @@ There are few rules for file and folder naming, some of which were already menti
   - `_methods`: for files with contract methods that are called be the entrypoints directly.
   - `_lambdas`: for files with contract lambdas that are usually intended to be stored in the contract storage.
   - `_helpers`: for files with different util functions used by the smart contract.
-  - \***\*`_views`: for files with views (Hangzhou protocol update, view functions) cause views can't be saved in the storage as the lambdas (**Tezos.call_view\*\* can't find the view function in the storage) and view functions shouldn't be mentioned in the main function.
+  - `_views`: for files with views (Hangzhou protocol update, view functions) cause views can't be saved in the storage as the lambdas (\*\*Tezos.call_view\*\* can't find the view function in the storage) and view functions shouldn't be mentioned in the main function.
 - Migrations names are started by the index in the form `XX_` (`00_[<name>].[<type>]` is the first migration).
 - Test names are started by the index in the form `XX_` (`00_[<name>].[<type>]` is the first test to be executed).
 
@@ -145,7 +145,9 @@ In the case of developing smart contracts as an npm project, the followed script
 There a few general rules for Ligo code formatting:
 
 - The indent is 2 spaces.
+
   **Example:**
+
   ```jsx
   if is_staked
   then {
@@ -154,6 +156,7 @@ There a few general rules for Ligo code formatting:
   }
   else skip;
   ```
+
 - The max line length is 120 symbols.
 - The names are written in the snake case (exceptions: the first later of the variant types and modules).
 - There should be no space after `(` and before `)` brackets.
@@ -306,6 +309,7 @@ else skip;
 
 - the type names must have the postfix `_t`.
   **Example:**
+
   ```jsx
   type fees_t             is [@layout:comb] record [
     reinvest                : nat;
